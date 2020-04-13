@@ -94,7 +94,65 @@ namespace WcfToDb
                 comm.CommandType = CommandType.Text;
                 conn.Open();
 
+                return comm.ExecuteNonQuery();                
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public int DeletePerson(Person p)
+        {
+            try
+            {
+                comm.CommandText = "DELETE TPerson WHERE Id = @Id";
+                comm.Parameters.AddWithValue("Id", p.Id);
+
+                comm.CommandType = CommandType.Text;
+                conn.Open();
+
                 return comm.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public Person GetPerson(Person p)
+        {
+            Person person = new Person();
+            try
+            {
+                comm.CommandText = "SELECT * FROM TPerson WHERE Id = @Id";
+                comm.Parameters.AddWithValue("Id", p.Id);
+
+                comm.CommandType = CommandType.Text;
+                conn.Open();
+
+                SqlDataReader reader = comm.ExecuteReader();
+                while (reader.Read())
+                {
+                    person.Id = Convert.ToInt32(reader[0]);
+                    person.Name = reader[1].ToString();
+                    person.Age = Convert.ToInt32(reader[2]);
+                }
+                return person;
             }
             catch (Exception)
             {

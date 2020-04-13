@@ -23,6 +23,12 @@ namespace WcfToDb
         [OperationContract]
         int UpdatePerson(Person p);
 
+        [OperationContract]
+        int DeletePerson(Person p);
+
+        [OperationContract]
+        Person GetPerson(Person p);
+
         // TODO: Добавьте здесь операции служб
     }
 

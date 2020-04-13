@@ -178,6 +178,18 @@ namespace WindowsFormsWcfToDb.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdatePerson", ReplyAction="http://tempuri.org/IService1/UpdatePersonResponse")]
         System.Threading.Tasks.Task<int> UpdatePersonAsync(WindowsFormsWcfToDb.ServiceReference1.Person p);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeletePerson", ReplyAction="http://tempuri.org/IService1/DeletePersonResponse")]
+        int DeletePerson(WindowsFormsWcfToDb.ServiceReference1.Person p);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeletePerson", ReplyAction="http://tempuri.org/IService1/DeletePersonResponse")]
+        System.Threading.Tasks.Task<int> DeletePersonAsync(WindowsFormsWcfToDb.ServiceReference1.Person p);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetPerson", ReplyAction="http://tempuri.org/IService1/GetPersonResponse")]
+        WindowsFormsWcfToDb.ServiceReference1.Person GetPerson(WindowsFormsWcfToDb.ServiceReference1.Person p);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetPerson", ReplyAction="http://tempuri.org/IService1/GetPersonResponse")]
+        System.Threading.Tasks.Task<WindowsFormsWcfToDb.ServiceReference1.Person> GetPersonAsync(WindowsFormsWcfToDb.ServiceReference1.Person p);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -237,6 +249,22 @@ namespace WindowsFormsWcfToDb.ServiceReference1 {
         
         public System.Threading.Tasks.Task<int> UpdatePersonAsync(WindowsFormsWcfToDb.ServiceReference1.Person p) {
             return base.Channel.UpdatePersonAsync(p);
+        }
+        
+        public int DeletePerson(WindowsFormsWcfToDb.ServiceReference1.Person p) {
+            return base.Channel.DeletePerson(p);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeletePersonAsync(WindowsFormsWcfToDb.ServiceReference1.Person p) {
+            return base.Channel.DeletePersonAsync(p);
+        }
+        
+        public WindowsFormsWcfToDb.ServiceReference1.Person GetPerson(WindowsFormsWcfToDb.ServiceReference1.Person p) {
+            return base.Channel.GetPerson(p);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsWcfToDb.ServiceReference1.Person> GetPersonAsync(WindowsFormsWcfToDb.ServiceReference1.Person p) {
+            return base.Channel.GetPersonAsync(p);
         }
     }
 }

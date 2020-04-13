@@ -36,6 +36,10 @@
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.dgvPeople = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).BeginInit();
             this.SuspendLayout();
             // 
             // btnInsert
@@ -106,11 +110,42 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(270, 95);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 8;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(27, 144);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(75, 23);
+            this.btnSelect.TabIndex = 9;
+            this.btnSelect.Text = "Select";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // dgvPeople
+            // 
+            this.dgvPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPeople.Location = new System.Drawing.Point(27, 190);
+            this.dgvPeople.Name = "dgvPeople";
+            this.dgvPeople.Size = new System.Drawing.Size(386, 196);
+            this.dgvPeople.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 175);
+            this.ClientSize = new System.Drawing.Size(445, 398);
+            this.Controls.Add(this.dgvPeople);
+            this.Controls.Add(this.btnSelect);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.label3);
@@ -121,6 +156,7 @@
             this.Controls.Add(this.btnInsert);
             this.Name = "Form1";
             this.Text = "Person";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,6 +172,9 @@
         private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.DataGridView dgvPeople;
     }
 }
 

@@ -105,6 +105,7 @@ namespace WindowsFormsWcfToDb
             Service1Client service = new Service1Client();
             _person.Add(service.GetPerson(p));
             dgvPeople.DataSource = _person;
+            //проверка
         }
     }
 }

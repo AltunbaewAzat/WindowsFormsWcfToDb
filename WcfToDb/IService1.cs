@@ -29,6 +29,9 @@ namespace WcfToDb
         [OperationContract]
         Person GetPerson(Person p);
 
+        [OperationContract]
+        List<Person> GetAllPeople();
+
         // TODO: Добавьте здесь операции служб
     }
 

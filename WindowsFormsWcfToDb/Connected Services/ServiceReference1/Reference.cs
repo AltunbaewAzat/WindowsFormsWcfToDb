@@ -190,6 +190,12 @@ namespace WindowsFormsWcfToDb.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetPerson", ReplyAction="http://tempuri.org/IService1/GetPersonResponse")]
         System.Threading.Tasks.Task<WindowsFormsWcfToDb.ServiceReference1.Person> GetPersonAsync(WindowsFormsWcfToDb.ServiceReference1.Person p);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllPeople", ReplyAction="http://tempuri.org/IService1/GetAllPeopleResponse")]
+        WindowsFormsWcfToDb.ServiceReference1.Person[] GetAllPeople();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllPeople", ReplyAction="http://tempuri.org/IService1/GetAllPeopleResponse")]
+        System.Threading.Tasks.Task<WindowsFormsWcfToDb.ServiceReference1.Person[]> GetAllPeopleAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -265,6 +271,14 @@ namespace WindowsFormsWcfToDb.ServiceReference1 {
         
         public System.Threading.Tasks.Task<WindowsFormsWcfToDb.ServiceReference1.Person> GetPersonAsync(WindowsFormsWcfToDb.ServiceReference1.Person p) {
             return base.Channel.GetPersonAsync(p);
+        }
+        
+        public WindowsFormsWcfToDb.ServiceReference1.Person[] GetAllPeople() {
+            return base.Channel.GetAllPeople();
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsWcfToDb.ServiceReference1.Person[]> GetAllPeopleAsync() {
+            return base.Channel.GetAllPeopleAsync();
         }
     }
 }

@@ -97,15 +97,21 @@ namespace WindowsFormsWcfToDb
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            List<Person> _person = new List<Person>();
+            List<Person> _person = new List<Person>();            
             Person p = new Person()
             {
                 Id = Convert.ToInt32(txtId.Text)
-            };
+            };            
             Service1Client service = new Service1Client();
             _person.Add(service.GetPerson(p));
             dgvPeople.DataSource = _person;
-            //проверка
+        }
+
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {            
+            Service1Client service = new Service1Client();
+
+            dgvPeople.DataSource = service.GetAllPeople();
         }
     }
 }

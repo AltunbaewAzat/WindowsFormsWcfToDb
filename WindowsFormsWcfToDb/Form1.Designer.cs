@@ -39,12 +39,13 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.dgvPeople = new System.Windows.Forms.DataGridView();
+            this.btnSelectAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).BeginInit();
             this.SuspendLayout();
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(27, 95);
+            this.btnInsert.Location = new System.Drawing.Point(27, 86);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(75, 23);
             this.btnInsert.TabIndex = 0;
@@ -102,7 +103,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(147, 95);
+            this.btnUpdate.Location = new System.Drawing.Point(147, 86);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 7;
@@ -112,7 +113,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(270, 95);
+            this.btnDelete.Location = new System.Drawing.Point(270, 86);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 8;
@@ -122,7 +123,7 @@
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(27, 144);
+            this.btnSelect.Location = new System.Drawing.Point(27, 161);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(75, 23);
             this.btnSelect.TabIndex = 9;
@@ -138,11 +139,22 @@
             this.dgvPeople.Size = new System.Drawing.Size(386, 196);
             this.dgvPeople.TabIndex = 10;
             // 
+            // btnSelectAll
+            // 
+            this.btnSelectAll.Location = new System.Drawing.Point(147, 161);
+            this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectAll.TabIndex = 11;
+            this.btnSelectAll.Text = "Select All";
+            this.btnSelectAll.UseVisualStyleBackColor = true;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 398);
+            this.Controls.Add(this.btnSelectAll);
             this.Controls.Add(this.dgvPeople);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.btnDelete);
@@ -175,6 +187,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.DataGridView dgvPeople;
+        private System.Windows.Forms.Button btnSelectAll;
     }
 }
 

@@ -85,4 +85,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetAllPeople">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPeopleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WcfToDb" minOccurs="0" name="GetAllPeopleResult" nillable="true" type="q8:ArrayOfPerson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

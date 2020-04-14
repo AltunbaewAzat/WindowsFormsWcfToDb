@@ -63,7 +63,6 @@ namespace WcfToDb
                 comm.Parameters.AddWithValue("Id", p.Id);
                 comm.Parameters.AddWithValue("Name", p.Name);
                 comm.Parameters.AddWithValue("Age", p.Age);
-
                 comm.CommandType = CommandType.Text;
                 conn.Open();
 
@@ -90,7 +89,6 @@ namespace WcfToDb
                 comm.Parameters.AddWithValue("Id", p.Id);
                 comm.Parameters.AddWithValue("Name", p.Name);
                 comm.Parameters.AddWithValue("Age", p.Age);
-
                 comm.CommandType = CommandType.Text;
                 conn.Open();
 
@@ -115,7 +113,6 @@ namespace WcfToDb
             {
                 comm.CommandText = "DELETE TPerson WHERE Id = @Id";
                 comm.Parameters.AddWithValue("Id", p.Id);
-
                 comm.CommandType = CommandType.Text;
                 conn.Open();
 
@@ -141,7 +138,6 @@ namespace WcfToDb
             {
                 comm.CommandText = "SELECT * FROM TPerson WHERE Id = @Id";
                 comm.Parameters.AddWithValue("Id", p.Id);
-
                 comm.CommandType = CommandType.Text;
                 conn.Open();
 
@@ -153,6 +149,41 @@ namespace WcfToDb
                     person.Age = Convert.ToInt32(reader[2]);
                 }
                 return person;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public List<Person> GetAllPeople()
+        {
+            List<Person> _people = new List<Person>();
+            try
+            {
+                comm.CommandText = "SELECT * FROM TPerson";
+                comm.CommandType = CommandType.Text;
+                conn.Open();
+
+                SqlDataReader reader = comm.ExecuteReader();
+                while (reader.Read())
+                {
+                    Person person = new Person()
+                    {
+                        Id = Convert.ToInt32(reader[0]),
+                        Name = reader[1].ToString(),
+                        Age = Convert.ToInt32(reader[2])
+                    };
+                    _people.Add(person);
+                }
+                return _people;
             }
             catch (Exception)
             {
